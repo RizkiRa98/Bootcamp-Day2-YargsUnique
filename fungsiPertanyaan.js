@@ -36,7 +36,7 @@ const pertanyaan = (question) =>{
     const contact = {name, email, mobile}
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8',));
     
-    //cek nama harus berbeda semua(unique)
+    //cek nama tidak boleh ada yang sama(unique)
     const cek = data.find((contact) => contact.name === name);
     if (cek){
       console.log('Nama sudah terdaftar didalam kontak');
