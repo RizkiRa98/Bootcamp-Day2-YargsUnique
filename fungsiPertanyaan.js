@@ -37,7 +37,8 @@ const pertanyaan = (question) =>{
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8',));
     
     //cek nama tidak boleh ada yang sama(unique)
-    const cek = data.find((contact) => contact.name === name);
+
+    const cek = data.find((contact) => contact.name.toUpperCase() === name.toUpperCase());
     if (cek){
       console.log('Nama sudah terdaftar didalam kontak');
       readline.close()
